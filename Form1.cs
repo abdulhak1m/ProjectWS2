@@ -25,6 +25,14 @@ namespace ProjectWS2
             txtPassword.TextChanged += (s, e) => { txtPassword.UseSystemPasswordChar = true; };
             show_password.MouseDown += (s, e) => { txtPassword.UseSystemPasswordChar = false; };
             show_password.MouseUp += (s, e) => { txtPassword.UseSystemPasswordChar = true; };
+
+            linkLabel1.Click += (s, e) =>
+            {
+                ActiveForm.Hide();
+                Form2 form2 = new Form2();
+                form2.ShowDialog();
+                Close();
+            };
         }
 
         void Form1_KeyDown(object sender, KeyEventArgs e)
@@ -36,13 +44,6 @@ namespace ProjectWS2
         void Btn_login_Click(object sender, EventArgs e)
         {
             // процесс авторизации
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "dbRBTDataSet.tbl_WS2". При необходимости она может быть перемещена или удалена.
-            this.tbl_WS2TableAdapter.Fill(this.dbRBTDataSet.tbl_WS2);
-
         }
     }
 }
